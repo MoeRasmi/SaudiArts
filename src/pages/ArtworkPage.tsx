@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { sanityClient, urlFor } from '../sanity/client';
+import { sanityClient } from '../sanity/client';
 import { ARTWORK_BY_SLUG_QUERY, ARTWORKS_QUERY } from '../sanity/queries';
 
 const ArtworkPage: React.FC = () => {
@@ -58,7 +58,7 @@ const ArtworkPage: React.FC = () => {
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="aspect-[4/5] bg-[#EDE8DC] overflow-hidden rounded-sm">
             {art.images && art.images[activeImageIdx] && (
               <img 
-                src={urlFor(art.images[activeImageIdx]).width(1200).url()} 
+                src={art.images[activeImageIdx].url} 
                 alt={art.title} 
                 className="w-full h-full object-cover grayscale-[5%]" 
               />
@@ -72,7 +72,7 @@ const ArtworkPage: React.FC = () => {
                   onClick={() => setActiveImageIdx(idx)}
                   className={`aspect-square overflow-hidden bg-[#EDE8DC] border ${activeImageIdx === idx ? 'border-[#8C6A3B]' : 'border-transparent opacity-60 hover:opacity-100'} transition-all`}
                 >
-                  <img src={urlFor(img).width(200).url()} alt={`Thumb ${idx}`} className="w-full h-full object-cover" />
+                  <img src={img.url} alt={`Thumb ${idx}`} className="w-full h-full object-cover" />
                 </button>
               ))}
             </div>
@@ -178,7 +178,7 @@ const ArtworkPage: React.FC = () => {
                 <Link to={`/artwork/${item.slug || item.id}`} className="group block relative aspect-[4/5] bg-[#EDE8DC] overflow-hidden">
                   {item.images?.[0] && (
                     <img 
-                      src={urlFor(item.images[0]).width(500).url()} 
+                      src={item.images[0].url} 
                       alt={item.title} 
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />

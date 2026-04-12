@@ -62,9 +62,13 @@ export const artwork = defineType({
       validation: (Rule) => Rule.min(5),
       of: [
         {
-          type: 'image',
-          options: { hotspot: true },
+          type: 'object',
           fields: [
+            {
+              name: 'imageAsset',
+              type: 'cloudinary.asset',
+              title: 'Cloudinary Image',
+            },
             {
               name: 'alt',
               type: 'string',

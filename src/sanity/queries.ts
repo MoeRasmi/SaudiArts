@@ -11,7 +11,11 @@ export const ARTWORKS_QUERY = `
     origin,
     description,
     description_ar,
-    images,
+    images[] {
+      "url": imageAsset.secure_url,
+      alt,
+      isPrimary
+    },
     dimensions,
     material,
     price,
@@ -32,7 +36,11 @@ export const ARTWORK_BY_SLUG_QUERY = `
     origin,
     description,
     description_ar,
-    images,
+    images[] {
+      "url": imageAsset.secure_url,
+      alt,
+      isPrimary
+    },
     dimensions,
     material,
     price,

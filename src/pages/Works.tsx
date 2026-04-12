@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { sanityClient, urlFor } from '../sanity/client';
+import { sanityClient } from '../sanity/client';
 import { ARTWORKS_QUERY, CATEGORIES_QUERY } from '../sanity/queries';
 
 const Works: React.FC = () => {
@@ -71,7 +71,7 @@ const Works: React.FC = () => {
             >
               <div className="aspect-[4/5] bg-[#EDE8DC] overflow-hidden">
                 {item.images?.[0] && (
-                  <img src={urlFor(item.images[0]).width(1000).url()} alt={item.title} className="w-full h-full object-cover grayscale-[15%]" />
+                  <img src={item.images[0].url} alt={item.title} className="w-full h-full object-cover grayscale-[15%]" />
                 )}
               </div>
               <div className="space-y-8 max-w-lg">
@@ -148,7 +148,7 @@ const Works: React.FC = () => {
                   <Link to={`/artwork/${item.slug || item.id}`} className="group block relative aspect-[4/5] bg-[#EDE8DC] overflow-hidden">
                     {item.images?.[0] && (
                       <img 
-                        src={urlFor(item.images[0]).width(800).url()} 
+                        src={item.images[0].url} 
                         alt={item.title} 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />

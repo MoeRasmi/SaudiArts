@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { sanityClient, urlFor } from '../sanity/client';
+import { sanityClient } from '../sanity/client';
 import { ARTWORKS_QUERY } from '../sanity/queries';
 
 const CorporateGifting: React.FC = () => {
@@ -67,7 +67,7 @@ const CorporateGifting: React.FC = () => {
                 >
                   {art.images?.[0] && (
                     <img
-                      src={urlFor(art.images[0]).width(600).url()}
+                      src={art.images[0].url}
                       alt={art.title}
                       className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2s]"
                     />
