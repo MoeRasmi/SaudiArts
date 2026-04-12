@@ -12,9 +12,8 @@ export const ARTWORKS_QUERY = `
     description,
     description_ar,
     images[] {
-      "url": imageAsset.secure_url,
-      alt,
-      isPrimary
+      asset->{_id, url},
+      alt
     },
     dimensions,
     material,
@@ -37,9 +36,8 @@ export const ARTWORK_BY_SLUG_QUERY = `
     description,
     description_ar,
     images[] {
-      "url": imageAsset.secure_url,
-      alt,
-      isPrimary
+      asset->{_id, url},
+      alt
     },
     dimensions,
     material,

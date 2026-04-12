@@ -70,8 +70,8 @@ const Works: React.FC = () => {
               className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
             >
               <div className="aspect-[4/5] bg-[#EDE8DC] overflow-hidden">
-                {item.images?.[0] && (
-                  <img src={item.images[0].url} alt={item.title} className="w-full h-full object-cover grayscale-[15%]" />
+                {item.images?.[0]?.asset?.url && (
+                  <img src={item.images[0].asset.url} alt={item.title} className="w-full h-full object-cover grayscale-[15%]" />
                 )}
               </div>
               <div className="space-y-8 max-w-lg">
@@ -146,9 +146,9 @@ const Works: React.FC = () => {
                   transition={{ duration: 0.5 }}
                 >
                   <Link to={`/artwork/${item.slug || item.id}`} className="group block relative aspect-[4/5] bg-[#EDE8DC] overflow-hidden">
-                    {item.images?.[0] && (
+                    {item.images?.[0]?.asset?.url && (
                       <img 
-                        src={item.images[0].url} 
+                        src={item.images[0].asset.url} 
                         alt={item.title} 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
