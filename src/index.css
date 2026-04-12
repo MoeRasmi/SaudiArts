@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════
+   ALQALÁ — Luxury Light Palette
+   Crème & Champagne Gold
+   ═══════════════════════════════════════════ */
+
+:root {
+  --bg:           #F8F5EE;   /* warm architectural ivory */
+  --bg-parchment: #EDE8DC;   /* aged parchment */
+  --bg-stone:     #E0D9CC;   /* stone section */
+  --text:         #1C1A17;   /* warm near-black ink */
+  --text-muted:   #6B6560;   /* antique stone muted */
+  --text-faint:   #9E9790;   /* faint captions */
+  --gold:         #B8964E;   /* antique champagne gold */
+  --gold-light:   #D4B06A;   /* hover gold */
+  --gold-line:    rgba(184, 150, 78, 0.22);  /* dividers */
+  --gold-glow:    rgba(184, 150, 78, 0.12);  /* glow bg */
+  --header-bg:    rgba(248, 245, 238, 0.96); /* scrolled header */
+  --border:       rgba(184, 150, 78, 0.22);  /* standard border */
+  --border-stone: #D6CFC0;                   /* stone borders */
+}
+
+@layer base {
+  html {
+    background-color: var(--bg);
+    color: var(--text);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display", serif;
+    color: var(--text);
+  }
+
+  [dir="rtl"] {
+    font-family: "Amiri", serif;
+  }
+
+  /* Selection color */
+  ::selection {
+    background-color: rgba(184, 150, 78, 0.18);
+    color: var(--text);
+  }
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-parchment);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+/* ─── Luxury Glow (light mode version) ─── */
+.luxury-glow {
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.luxury-glow:hover {
+  box-shadow: 0 8px 40px rgba(184, 150, 78, 0.18), 0 2px 12px rgba(0,0,0,0.06);
+}
+
+/* ─── Subtle paper grain ─── */
+.subtle-grain {
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  opacity: 0.04;
+}
+
+/* ─── Vignette ─── */
+.vignette {
+  box-shadow: inset 0 0 100px rgba(28, 26, 23, 0.15);
+}
+
+/* ─── Smooth fade ─── */
+.smooth-fade {
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Thin gold rule decorative ─── */
+.gold-rule {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  opacity: 0.4;
+}
+
+/* ─── Typography utilities ─── */
+.font-serif  { font-family: "Playfair Display", serif; }
+.font-arabic { font-family: "Amiri", serif; }
+.font-sans   { font-family: "Inter", sans-serif; }
+
+/* ─── Override Tailwind dark-mapped classes ─── */
+/* These override old bg-charcoal / text-ivory usage to light palette values */
+.bg-charcoal          { background-color: var(--bg) !important; }
+.bg-charcoal-lighter  { background-color: var(--bg-parchment) !important; }
+.text-ivory           { color: var(--text) !important; }
+.text-ivory\/30       { color: rgba(28,26,23,0.30) !important; }
+.text-ivory\/40       { color: rgba(28,26,23,0.40) !important; }
+.text-ivory\/50       { color: rgba(28,26,23,0.50) !important; }
+.text-ivory\/60       { color: rgba(28,26,23,0.60) !important; }
+.text-ivory\/70       { color: rgba(28,26,23,0.70) !important; }
+.text-ivory\/80       { color: rgba(28,26,23,0.80) !important; }
+.border-gold\/10      { border-color: rgba(184,150,78,0.10) !important; }
+.border-gold\/20      { border-color: rgba(184,150,78,0.22) !important; }
+.border-gold\/30      { border-color: rgba(184,150,78,0.32) !important; }
+
+/* ─── Black overlays → warm sepia overlays ─── */
+.bg-black\/30 { background-color: rgba(28,26,23,0.25) !important; }
+.bg-black\/50 { background-color: rgba(28,26,23,0.42) !important; }
+.bg-black\/60 { background-color: rgba(28,26,23,0.50) !important; }
+.bg-black\/70 { background-color: rgba(28,26,23,0.58) !important; }
+
+/* gradient overrides on cards */
+.from-charcoal\/80 { --tw-gradient-from: rgba(28,26,23,0.65) !important; }
