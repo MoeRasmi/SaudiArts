@@ -4,37 +4,37 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Primary background — warm architectural ivory
+        // Luxury dark theme
         charcoal: {
-          DEFAULT: '#F8F5EE',
-          lighter: '#EDE8DC',
+          DEFAULT: '#0A0A0A',
+          lighter: '#1A1A1A',
         },
-        // Primary text — warm near-black ink
+        // White text
         ivory: {
-          DEFAULT: '#1C1A17',
-          darker: '#2E2B26',
+          DEFAULT: '#FAF9F6',
+          darker: '#E8E8E8',
         },
-        // Antique champagne gold
+        // Luxury gold
         gold: {
-          DEFAULT: '#B8964E',
+          DEFAULT: '#C5A059',
           muted: '#8B6F35',
-          glow: 'rgba(184, 150, 78, 0.15)',
+          glow: 'rgba(197, 160, 89, 0.2)',
         },
-        // Stone — borders, dividers
+        // Borders
         stone: {
-          DEFAULT: '#D6CFC0',
-          dark: '#BEB5A4',
+          DEFAULT: '#3A3A3A',
+          dark: '#2A2A2A',
         },
-        // Parchment — card backgrounds
+        // Card backgrounds
         parchment: {
-          DEFAULT: '#EDE8DC',
-          dark: '#E0D9CC',
+          DEFAULT: '#1A1A1A',
+          dark: '#0A0A0A',
         },
-        // Ink — text hierarchy
+        // Text hierarchy
         ink: {
-          DEFAULT: '#1C1A17',
-          muted: '#6B6560',
-          faint: '#9E9790',
+          DEFAULT: '#FAF9F6',
+          muted: '#C0C0C0',
+          faint: '#808080',
         },
         heritage: {
           brown: '#7A5C3A',

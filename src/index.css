@@ -6,19 +6,19 @@
    ═══════════════════════════════════════════ */
 
 :root {
-  --bg:           #F8F5EE;   /* warm architectural ivory */
-  --bg-parchment: #EDE8DC;   /* aged parchment */
-  --bg-stone:     #E0D9CC;   /* stone section */
-  --text:         #1C1A17;   /* warm near-black ink */
-  --text-muted:   #6B6560;   /* antique stone muted */
-  --text-faint:   #9E9790;   /* faint captions */
-  --gold:         #B8964E;   /* antique champagne gold */
+  --bg:           #0A0A0A;   /* luxury black background */
+  --bg-parchment: #1A1A1A;   /* lighter black */
+  --bg-stone:     #2A2A2A;   /* card backgrounds */
+  --text:         #FAF9F6;   /* ivory white */
+  --text-muted:   #C0C0C0;   /* muted silver */
+  --text-faint:   #808080;   /* faint gray */
+  --gold:         #C5A059;   /* luxury gold */
   --gold-light:   #D4B06A;   /* hover gold */
-  --gold-line:    rgba(184, 150, 78, 0.22);  /* dividers */
-  --gold-glow:    rgba(184, 150, 78, 0.12);  /* glow bg */
-  --header-bg:    rgba(248, 245, 238, 0.96); /* scrolled header */
-  --border:       rgba(184, 150, 78, 0.22);  /* standard border */
-  --border-stone: #D6CFC0;                   /* stone borders */
+  --gold-line:    rgba(197, 160, 89, 0.3);  /* dividers */
+  --gold-glow:    rgba(197, 160, 89, 0.15); /* glow bg */
+  --header-bg:    rgba(10, 10, 10, 0.95);   /* scrolled header */
+  --border:       rgba(197, 160, 89, 0.3);  /* standard border */
+  --border-stone: #3A3A3A;                   /* stone borders */
 }
 
 @layer base {
@@ -39,6 +39,7 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: "Playfair Display", serif;
     color: var(--text);
+    font-weight: 400;
   }
 
   [dir="rtl"] {

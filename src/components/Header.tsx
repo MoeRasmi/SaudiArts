@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink, Link } from 'react-router-dom';
-import { Sun, Moon, Languages, Menu, X } from 'lucide-react';
+import { Languages, Menu, X } from 'lucide-react';
 import { useThemeLang } from './ThemeLanguageProvider';
 import { cn } from '../utils/cn';
 
 export const Header: React.FC = () => {
   const { t } = useTranslation();
-  const { isDark, toggleTheme, lang, changeLang } = useThemeLang();
+  const { lang, changeLang } = useThemeLang();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -79,7 +79,7 @@ export const Header: React.FC = () => {
           ))}
         </nav>
 
-        {/* Desktop — Language and theme toggle */}
+        {/* Desktop — Language only */}
         <div className="hidden lg:flex items-center space-x-6 rtl:space-x-reverse">
           <button
             onClick={() => changeLang(lang === 'en' ? 'ar' : 'en')}
@@ -90,13 +90,6 @@ export const Header: React.FC = () => {
             <span className="text-[10px] uppercase tracking-widest">
               {lang === 'en' ? 'AR' : 'EN'}
             </span>
-          </button>
-          <button
-            onClick={toggleTheme}
-            className="transition-all duration-300 hover:opacity-70"
-            style={{ color: 'var(--text-muted)' }}
-          >
-            {isDark ? <Sun size={16} /> : <Moon size={16} />}
           </button>
         </div>
 
@@ -141,12 +134,6 @@ export const Header: React.FC = () => {
               style={{ color: 'var(--gold)' }}
             >
               {lang === 'en' ? 'Arabic' : 'English'}
-            </button>
-            <button
-              onClick={toggleTheme}
-              style={{ color: 'var(--gold)' }}
-            >
-              {isDark ? <Sun size={20} /> : <Moon size={20} />}
             </button>
           </div>
         </nav>
