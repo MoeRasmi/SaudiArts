@@ -32,12 +32,12 @@ const Home: React.FC = () => {
           className="text-center"
         >
           <div className="flex items-center justify-center space-x-3 rtl:space-x-reverse">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ border: '1px solid rgba(184,150,78,0.55)' }}>
-              <span className="text-lg font-serif" style={{ color: 'var(--gold)' }}>AQ</span>
+            <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ border: '1px solid #C5A059' }}>
+              <span className="text-lg font-serif" style={{ color: '#C5A059' }}>AQ</span>
             </div>
             <div>
-              <span className="text-xl font-serif tracking-wider" style={{ color: 'var(--gold)' }}>ALQALÁ</span>
-              <span className="block text-[8px] tracking-[0.3em] uppercase" style={{ color: 'rgba(184,150,78,0.7)' }}>Museum</span>
+              <span className="text-xl font-serif tracking-wider" style={{ color: '#C5A059' }}>ALQALÁ</span>
+              <span className="block text-[8px] tracking-[0.3em] uppercase" style={{ color: '#C5A059' }}>Museum</span>
             </div>
           </div>
         </motion.div>
@@ -55,16 +55,16 @@ const Home: React.FC = () => {
             border: '1px solid rgba(184,150,78,0.25)',
           }}
         >
-          <h1 className="text-2xl md:text-3xl font-serif leading-tight mb-4" style={{ color: '#F8F5EE' }}>
+          <h1 className="text-2xl md:text-3xl font-serif leading-tight mb-4" style={{ color: '#FFFFFF' }}>
             {t('hero.title')}
           </h1>
-          <p className="text-sm leading-relaxed" style={{ color: 'rgba(248,245,238,0.72)' }}>
+          <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.80)' }}>
             {t('hero.subtitle', 'Where heritage meets contemporary artistry')}
           </p>
           <Link
             to="/works"
             className="inline-block mt-6 text-xs uppercase tracking-[0.2em] transition-colors pb-1"
-            style={{ color: 'var(--gold)', borderBottom: '1px solid rgba(184,150,78,0.45)' }}
+            style={{ color: '#C5A059', borderBottom: '1px solid #C5A059' }}
           >
             {t('hero.cta', 'Discover')}
           </Link>
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
             border: '1px solid rgba(184,150,78,0.22)',
           }}
         >
-          <span className="text-[10px] uppercase tracking-[0.2em]" style={{ color: 'var(--gold)' }}>
+          <span className="text-[10px] uppercase tracking-[0.2em]" style={{ color: '#C5A059' }}>
             {t('hero.microritm', 'Est. 1978')}
           </span>
         </motion.div>
@@ -97,7 +97,7 @@ const Home: React.FC = () => {
           transition={{ delay: 2, duration: 1 }}
           className="flex flex-col items-center space-y-2"
         >
-          <div className="w-px h-8" style={{ background: 'linear-gradient(to bottom, rgba(184,150,78,0.7), transparent)' }} />
+          <div className="w-px h-8" style={{ background: 'linear-gradient(to bottom, #C5A059, transparent)' }} />
         </motion.div>
       </div>
     </div>
