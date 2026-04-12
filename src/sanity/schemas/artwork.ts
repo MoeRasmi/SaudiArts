@@ -59,30 +59,12 @@ export const artwork = defineType({
       name: 'images',
       title: 'Images',
       type: 'array',
-      validation: (Rule) => Rule.min(5),
       of: [
-        {
-          type: 'object',
-          fields: [
-            {
-              name: 'imageAsset',
-              type: 'cloudinary.asset',
-              title: 'Cloudinary Image',
-            },
-            {
-              name: 'alt',
-              type: 'string',
-              title: 'Alternative Text',
-            },
-            {
-              name: 'isPrimary',
-              type: 'boolean',
-              title: 'Is Primary Image?',
-              initialValue: false,
-            }
-          ]
+        { 
+          type: 'image',
+          options: { hotspot: true } 
         }
-      ],
+      ]
     }),
     defineField({
       name: 'dimensions',
