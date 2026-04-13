@@ -11,7 +11,6 @@ interface ContextType {
 const ThemeLanguageContext = createContext<ContextType | undefined>(undefined);
 
 export const ThemeLanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [isDark, setIsDark] = useState(true);
   const { i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language || 'en');
 
@@ -21,16 +20,14 @@ export const ThemeLanguageProvider: React.FC<{ children: React.ReactNode }> = ({
     document.documentElement.lang = lang;
   }, [lang]);
 
-  const toggleTheme = () => setIsDark(!isDark);
-
   const changeLang = (lng: string) => {
     i18n.changeLanguage(lng);
     setLang(lng);
   };
 
   return (
-    <ThemeLanguageContext.Provider value={{ isDark, toggleTheme, lang, changeLang }}>
-      <div className={`${isDark ? 'bg-charcoal text-ivory' : 'bg-ivory text-charcoal'} min-h-screen`}>
+    <ThemeLanguageContext.Provider value={{ isDark: false, toggleTheme: () => {}, lang, changeLang }}>
+      <div className="bg-ivory text-charcoal min-h-screen">
         {children}
       </div>
     </ThemeLanguageContext.Provider>

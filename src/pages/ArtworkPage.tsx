@@ -33,19 +33,19 @@ const ArtworkPage: React.FC = () => {
   }, [artworkId]);
 
   if (loading) {
-    return <div className="min-h-screen bg-[#F8F6F2] flex items-center justify-center text-[#8C6A3B] text-xs uppercase tracking-widest">Loading...</div>;
+    return <div className="min-h-screen bg-[var(--bg)] flex items-center justify-center text-[var(--gold)] text-xs uppercase tracking-widest">Loading...</div>;
   }
 
   if (!art) {
-    return <div className="min-h-screen bg-[#F8F6F2] flex items-center justify-center text-[#6B6560]">Artwork not found.</div>;
+    return <div className="min-h-screen bg-[var(--bg)] flex items-center justify-center text-[var(--text-muted)]">Artwork not found.</div>;
   }
 
   const shortIntro = art.description ? art.description.split('. ')[0] + '.' : '';
 
   return (
-    <div className="bg-[#F8F6F2] min-h-screen text-[#1C1A17] font-sans pb-32">
+    <div className="bg-[var(--bg)] min-h-screen text-[var(--text)] font-sans pb-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-12 pb-8">
-        <Link to="/works" className="text-[10px] uppercase tracking-widest text-[#8C6A3B] hover:text-[#1C1A17] hover:underline transition-colors">
+        <Link to="/works" className="text-[10px] uppercase tracking-widest text-[var(--gold)] hover:text-[var(--text)] hover:underline transition-colors">
           ← Back to Collection
         </Link>
       </div>
@@ -83,13 +83,13 @@ const ArtworkPage: React.FC = () => {
         <div className="space-y-12 py-4">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl font-serif leading-tight">{art.title}</h1>
-            <div className="text-[10px] uppercase tracking-widest text-[#8C6A3B] border-b border-[#D6CFC0] pb-6">
+            <div className="text-[10px] uppercase tracking-widest text-[var(--gold)] border-b border-[var(--gold-line)] pb-6">
               {art.category || art.categoryId} • {art.period}
             </div>
             {art.price && (
               <div className="text-sm font-serif">Price: ${art.price.toLocaleString()}</div>
             )}
-            <p className="text-[#6B6560] text-lg leading-relaxed pt-2">
+            <p className="text-[var(--text-muted)] text-lg leading-relaxed pt-2">
               {shortIntro}
             </p>
           </div>
@@ -157,10 +157,10 @@ const ArtworkPage: React.FC = () => {
 
           {/* CTA SECTION */}
           <div className="flex flex-col sm:flex-row gap-6 pt-4">
-            <Link to="/inquire" state={{ artwork: art.title, ref: art.id ? `REF-${art.id.padStart(4, '0')}` : art.slug }} className="flex-1 bg-[#1C1A17] text-[#F8F6F2] hover:bg-[#8C6A3B] transition-colors py-4 text-center text-xs uppercase tracking-widest">
+            <Link to="/inquire" state={{ artwork: art.title, ref: art.id ? `REF-${art.id.padStart(4, '0')}` : art.slug }} className="flex-1 bg-[var(--text)] text-[var(--bg)] hover:bg-[var(--gold)] transition-colors py-4 text-center text-xs uppercase tracking-widest">
               Enquire
             </Link>
-            <Link to="/inquire" state={{ artwork: art.title, ref: art.slug, type: 'details' }} className="flex-1 border-2 border-[#1C1A17] text-[#1C1A17] hover:bg-[#1C1A17] hover:text-[#F8F6F2] transition-colors py-4 text-center text-xs uppercase tracking-widest">
+            <Link to="/inquire" state={{ artwork: art.title, ref: art.slug, type: 'details' }} className="flex-1 border-2 border-[var(--text)] text-[var(--text)] hover:bg-[var(--text)] hover:text-[var(--bg)] transition-colors py-4 text-center text-xs uppercase tracking-widest">
               Request Details
             </Link>
           </div>

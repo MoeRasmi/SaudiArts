@@ -49,12 +49,12 @@ const Works: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#F8F6F2] min-h-screen text-[#1C1A17] font-sans overflow-hidden">
+    <div className="bg-[var(--bg)] min-h-screen text-[var(--text)] font-sans overflow-hidden">
       {/* HERO */}
       <section className="py-32 flex flex-col items-center justify-center text-center px-6">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="max-w-[600px] mx-auto space-y-6">
-          <h1 className="text-5xl md:text-6xl font-serif text-[#1C1A17]">Works of Art</h1>
-          <p className="text-[#8C6A3B] leading-relaxed text-lg mx-auto">
+          <h1 className="text-5xl md:text-6xl font-serif text-[var(--text)]">Works of Art</h1>
+          <p className="text-[var(--gold)] leading-relaxed text-lg mx-auto">
             A curated selection of objects defined by craftsmanship, material integrity, and historical presence.
           </p>
         </motion.div>
@@ -69,7 +69,7 @@ const Works: React.FC = () => {
               initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }}
               className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
             >
-              <div className="aspect-[4/5] bg-[#EDE8DC] overflow-hidden">
+              <div className="aspect-[4/5] bg-[var(--bg-stone)] overflow-hidden">
                 {item.images?.[0]?.asset?.url && (
                   <img src={item.images[0].asset.url} alt={item.title} className="w-full h-full object-cover grayscale-[15%]" />
                 )}
@@ -77,11 +77,11 @@ const Works: React.FC = () => {
               <div className="space-y-8 max-w-lg">
                 <div className="space-y-2">
                   <h2 className="text-4xl font-serif">{item.title}</h2>
-                  <div className="text-[10px] uppercase tracking-widest text-[#8C6A3B]">
+                  <div className="text-[10px] uppercase tracking-widest text-[var(--gold)]">
                     {item.category || item.categoryId} • {item.period}
                   </div>
                 </div>
-                <p className="text-[#6B6560] leading-relaxed">
+                <p className="text-[var(--text-muted)] leading-relaxed">
                   {(item.description || '').split('. ')[0] + '.'}
                 </p>
                 {item.dimensions && (
@@ -91,7 +91,7 @@ const Works: React.FC = () => {
                   </div>
                 )}
                 <div className="pt-4">
-                  <Link to={`/artwork/${item.slug || item.id}`} className="inline-block border-b border-[#1C1A17] pb-1 text-xs uppercase tracking-widest hover:text-[#8C6A3B] hover:border-[#8C6A3B] transition-colors">
+                  <Link to={`/artwork/${item.slug || item.id}`} className="inline-block border-b border-[var(--text)] pb-1 text-xs uppercase tracking-widest hover:text-[var(--gold)] hover:border-[var(--gold)] transition-colors">
                     View Object
                   </Link>
                 </div>
@@ -103,11 +103,11 @@ const Works: React.FC = () => {
 
       {/* CONTROL BAR */}
       <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-12">
-        <div className="flex flex-col md:flex-row justify-between items-center border-b border-[#D6CFC0] pb-6 text-xs uppercase tracking-widest text-[#6B6560]">
+        <div className="flex flex-col md:flex-row justify-between items-center border-b border-[var(--gold-line)] pb-6 text-xs uppercase tracking-widest text-[var(--text-muted)]">
           <div className="flex space-x-8 mb-4 md:mb-0 overflow-x-auto w-full md:w-auto">
-            <button onClick={() => setFilter('all')} className={`hover:text-[#1C1A17] transition-colors whitespace-nowrap ${filter === 'all' ? 'text-[#8C6A3B]' : ''}`}>All</button>
+            <button onClick={() => setFilter('all')} className={`hover:text-[var(--text)] transition-colors whitespace-nowrap ${filter === 'all' ? 'text-[var(--gold)]' : ''}`}>All</button>
             {categories.map(c => (
-              <button key={c.slug} onClick={() => setFilter(c.slug)} className={`hover:text-[#1C1A17] transition-colors whitespace-nowrap ${filter === c.slug ? 'text-[#8C6A3B]' : ''}`}>
+              <button key={c.slug} onClick={() => setFilter(c.slug)} className={`hover:text-[var(--text)] transition-colors whitespace-nowrap ${filter === c.slug ? 'text-[var(--gold)]' : ''}`}>
                 {c.title}
               </button>
             ))}
@@ -124,7 +124,7 @@ const Works: React.FC = () => {
 
       {/* TRUST TEXT */}
       <div className="text-center mb-20 px-6 max-w-2xl mx-auto">
-        <p className="text-sm font-serif italic text-[#8C6A3B]">
+        <p className="text-sm font-serif italic text-[var(--gold)]">
           "Every object is physically verified and catalogued with precise measurement and material assessment."
         </p>
       </div>

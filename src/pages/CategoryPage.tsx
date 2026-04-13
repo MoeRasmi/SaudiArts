@@ -31,7 +31,7 @@ const CategoryPage: React.FC = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#F8F6F2] flex items-center justify-center text-[#8C6A3B] text-xs uppercase tracking-widest">
+      <div className="min-h-screen bg-[var(--bg)] flex items-center justify-center text-[var(--gold)] text-xs uppercase tracking-widest">
         Loading...
       </div>
     );

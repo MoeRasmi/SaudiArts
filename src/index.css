@@ -6,19 +6,19 @@
    ═══════════════════════════════════════════ */
 
 :root {
-  --bg:           #0A0A0A;   /* luxury black background */
-  --bg-parchment: #1A1A1A;   /* lighter black */
-  --bg-stone:     #2A2A2A;   /* card backgrounds */
-  --text:         #FAF9F6;   /* ivory white */
-  --text-muted:   #C0C0C0;   /* muted silver */
-  --text-faint:   #808080;   /* faint gray */
-  --gold:         #C5A059;   /* luxury gold */
-  --gold-light:   #D4B06A;   /* hover gold */
-  --gold-line:    rgba(197, 160, 89, 0.3);  /* dividers */
-  --gold-glow:    rgba(197, 160, 89, 0.15); /* glow bg */
-  --header-bg:    rgba(10, 10, 10, 0.95);   /* scrolled header */
-  --border:       rgba(197, 160, 89, 0.3);  /* standard border */
-  --border-stone: #3A3A3A;                   /* stone borders */
+  --bg:           #0A0A0A;   /* Deep charcoal/black */
+  --bg-parchment: #121212;   /* Slightly lighter dark */
+  --bg-stone:     #1A1A1A;   /* For section backgrounds */
+  --text:         #FAF9F6;   /* Ivory white font */
+  --text-muted:   #B0B0B0;   /* Muted gray */
+  --text-faint:   #666666;   /* Faint secondary text */
+  --gold:         #C5A059;   /* Signature gold */
+  --gold-light:   #D4B06A;   /* Lighter gold hover */
+  --gold-line:    rgba(197, 160, 89, 0.25); /* Delicate gold lines */
+  --gold-glow:    rgba(197, 160, 89, 0.05); /* Soft gold glow */
+  --header-bg:    rgba(10, 10, 10, 0.95);  /* Dark header */
+  --border:       rgba(197, 160, 89, 0.2);   /* Gold borders */
+  --border-stone: #2A2A2A;                   /* Dark stone border */
 }
 
 @layer base {
@@ -107,12 +107,12 @@
 .bg-charcoal          { background-color: var(--bg) !important; }
 .bg-charcoal-lighter  { background-color: var(--bg-parchment) !important; }
 .text-ivory           { color: var(--text) !important; }
-.text-ivory\/30       { color: rgba(255,255,255,0.30) !important; }
-.text-ivory\/40       { color: rgba(255,255,255,0.40) !important; }
-.text-ivory\/50       { color: rgba(255,255,255,0.50) !important; }
-.text-ivory\/60       { color: rgba(255,255,255,0.60) !important; }
-.text-ivory\/70       { color: rgba(255,255,255,0.70) !important; }
-.text-ivory\/80       { color: rgba(255,255,255,0.80) !important; }
+.text-ivory\/30       { color: rgba(26,26,26,0.30) !important; }
+.text-ivory\/40       { color: rgba(26,26,26,0.40) !important; }
+.text-ivory\/50       { color: rgba(26,26,26,0.50) !important; }
+.text-ivory\/60       { color: rgba(26,26,26,0.60) !important; }
+.text-ivory\/70       { color: rgba(26,26,26,0.70) !important; }
+.text-ivory\/80       { color: rgba(26,26,26,0.80) !important; }
 .border-gold\/10      { border-color: rgba(197,160,89,0.10) !important; }
 .border-gold\/20      { border-color: rgba(197,160,89,0.22) !important; }
 .border-gold\/30      { border-color: rgba(197,160,89,0.32) !important; }
@@ -124,4 +124,4 @@
 .bg-black\/70 { background-color: rgba(0,0,0,0.70) !important; }
 
 /* gradient overrides on cards */
-.from-charcoal\/80 { --tw-gradient-from: rgba(10,10,10,0.80) !important; }
+.from-charcoal\/80 { --tw-gradient-from: rgba(250,249,246,0.80) !important; }

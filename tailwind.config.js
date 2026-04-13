@@ -4,15 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Luxury dark theme
+        // Luxury light theme (redefined)
         charcoal: {
-          DEFAULT: '#0A0A0A',
-          lighter: '#1A1A1A',
+          DEFAULT: '#FAF9F6', // Actually ivory now for common bg usage
+          lighter: '#FDFBF7',
         },
-        // White text
+        // Typography
         ivory: {
-          DEFAULT: '#FAF9F6',
-          darker: '#E8E8E8',
+          DEFAULT: '#1A1A1A', // Actually charcoal now for common text usage
+          darker: '#000000',
         },
         // Luxury gold
         gold: {
@@ -22,19 +22,19 @@ export default {
         },
         // Borders
         stone: {
-          DEFAULT: '#3A3A3A',
-          dark: '#2A2A2A',
+          DEFAULT: '#E8E3DA',
+          dark: '#F5F2ED',
         },
         // Card backgrounds
         parchment: {
-          DEFAULT: '#1A1A1A',
-          dark: '#0A0A0A',
+          DEFAULT: '#FDFBF7',
+          dark: '#F5F2ED',
         },
         // Text hierarchy
         ink: {
-          DEFAULT: '#FAF9F6',
-          muted: '#C0C0C0',
-          faint: '#808080',
+          DEFAULT: '#1A1A1A',
+          muted: '#666666',
+          faint: '#999999',
         },
         heritage: {
           brown: '#7A5C3A',

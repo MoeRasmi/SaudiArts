@@ -103,12 +103,12 @@ export const Header: React.FC = () => {
         </button>
       </div>
 
-      {/* Mobile Nav — kept dark for drama */}
+      {/* Mobile Nav — Light Ivory */}
       <div className={cn(
         "fixed inset-0 z-40 lg:hidden flex flex-col items-center justify-center transition-all duration-700",
         isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
       )}
-        style={{ backgroundColor: '#1C1A17' }}
+        style={{ backgroundColor: 'var(--bg)' }}
       >
         <nav className="flex flex-col items-center space-y-8">
           {navItems.map((item) => (
@@ -117,9 +117,9 @@ export const Header: React.FC = () => {
               to={item.to}
               onClick={() => setIsOpen(false)}
               className="text-lg uppercase tracking-widest font-serif transition-colors duration-300"
-              style={{ color: '#F8F5EE' }}
+              style={{ color: 'var(--text)' }}
               onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')}
-              onMouseLeave={e => (e.currentTarget.style.color = '#F8F5EE')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'var(--text)')}
             >
               {item.label}
             </Link>
