@@ -15,7 +15,7 @@ const SANITY_WRITE_TOKEN = 'skvC78n5Eyh1p4wlOgcTFpXi6QKwe8VMHFSemPpOhPDSiLaVFyBi
 
 // Initialize the Sanity Client with Write privileges 
 const client = createClient({
-  projectId: process.env.VITE_SANITY_PROJECT_ID || 'pg9ct8q7cm8yrp2jzujnqrik',
+  projectId: process.env.VITE_SANITY_PROJECT_ID || '56rsac5v',
   dataset: process.env.VITE_SANITY_DATASET || 'production',
   token: SANITY_WRITE_TOKEN,
   useCdn: false,

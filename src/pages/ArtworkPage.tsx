@@ -43,7 +43,7 @@ const ArtworkPage: React.FC = () => {
   const shortIntro = art.description ? art.description.split('. ')[0] + '.' : '';
 
   return (
-    <div className="bg-[var(--bg)] min-h-screen" style={{ color: 'var(--text)' }} className="font-sans pb-32">
+    <div className="bg-[var(--bg)] min-h-screen font-sans pb-32" style={{ color: 'var(--text)' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-12 pb-8">
         <Link to="/works" className="text-[10px] uppercase tracking-widest text-[var(--gold)] hover:text-[var(--text)] hover:underline transition-colors">
           ← Back to Collection
