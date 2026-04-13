@@ -35,7 +35,7 @@ const PrivateViewing: React.FC = () => {
           className="text-center max-w-2xl mx-auto space-y-12 mb-32"
         >
           <div className="w-px h-24 mx-auto" style={{ backgroundColor: 'var(--gold)', opacity: 0.4 }} />
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif italic tracking-tight" style={{ color: '#1A1A1A' }}>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif italic tracking-tight" style={{ color: 'var(--text)' }}>
             {t('private.title')}
           </h1>
           <p className="uppercase text-xs tracking-[0.5em] leading-relaxed" style={{ color: 'var(--gold)' }}>
@@ -63,10 +63,10 @@ const PrivateViewing: React.FC = () => {
               <span className="text-[10px] uppercase tracking-widest font-bold" style={{ color: 'var(--gold)', opacity: 0.65 }}>
                 0{idx + 1}
               </span>
-              <h3 className="text-2xl font-serif tracking-wide italic" style={{ color: '#1A1A1A' }}>
+              <h3 className="text-2xl font-serif tracking-wide italic" style={{ color: 'var(--text)' }}>
                 {block.title}
               </h3>
-              <p className="text-sm leading-loose font-sans" style={{ color: '#1A1A1A' }}>
+              <p className="text-sm leading-loose font-sans" style={{ color: 'var(--text)' }}>
                 {block.desc}
               </p>
               <div className="pt-4" style={{ borderTop: '1px solid var(--gold-line)' }}>

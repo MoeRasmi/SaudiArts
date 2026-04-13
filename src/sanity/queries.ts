@@ -47,9 +47,13 @@ export const ARTWORK_BY_SLUG_QUERY = `
 `
 
 export const CATEGORIES_QUERY = `
-  *[_type == "category"] {
-    title,
-    title_ar,
+  *[_type == "category"] | order(orderWeight asc) {
+    title: titleEn,
+    title_ar: titleAr,
+    description: descriptionEn,
+    description_ar: descriptionAr,
+    "image": categoryImage.asset->url,
+    orderWeight,
     "slug": slug.current
   }
 `

@@ -37,15 +37,15 @@ const ArtworkPage: React.FC = () => {
   }
 
   if (!art) {
-    return <div className="min-h-screen bg-[var(--bg)] flex items-center justify-center" style={{ color: '#1A1A1A' }}>Artwork not found.</div>;
+    return <div className="min-h-screen bg-[var(--bg)] flex items-center justify-center" style={{ color: 'var(--text)' }}>Artwork not found.</div>;
   }
 
   const shortIntro = art.description ? art.description.split('. ')[0] + '.' : '';
 
   return (
-    <div className="bg-[var(--bg)] min-h-screen" style={{ color: '#1A1A1A' }} className="font-sans pb-32">
+    <div className="bg-[var(--bg)] min-h-screen" style={{ color: 'var(--text)' }} className="font-sans pb-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-12 pb-8">
-        <Link to="/works" className="text-[10px] uppercase tracking-widest text-[var(--gold)] hover:text-[#1A1A1A] hover:underline transition-colors">
+        <Link to="/works" className="text-[10px] uppercase tracking-widest text-[var(--gold)] hover:text-[var(--text)] hover:underline transition-colors">
           ← Back to Collection
         </Link>
       </div>
@@ -70,7 +70,7 @@ const ArtworkPage: React.FC = () => {
                 <button 
                   key={idx} 
                   onClick={() => setActiveImageIdx(idx)}
-                  className={`aspect-square overflow-hidden bg-[#FDFBF7] border ${activeImageIdx === idx ? 'border-[#1A1A1A]' : 'border-transparent opacity-60 hover:opacity-100'} transition-all`}
+                  className={`aspect-square overflow-hidden bg-[#FDFBF7] border ${activeImageIdx === idx ? 'border-[var(--text)]' : 'border-transparent opacity-60 hover:opacity-100'} transition-all`}
                 >
                   <img src={img.url} alt={`Thumb ${idx}`} className="w-full h-full object-cover" />
                 </button>
@@ -89,13 +89,13 @@ const ArtworkPage: React.FC = () => {
             {art.price && (
               <div className="text-sm font-serif">Price: ${art.price.toLocaleString()}</div>
             )}
-            <p className="text-lg leading-relaxed pt-2" style={{ color: '#1A1A1A' }}>
+            <p className="text-lg leading-relaxed pt-2" style={{ color: 'var(--text)' }}>
               {shortIntro}
             </p>
           </div>
 
           {/* ESSENTIAL DETAILS */}
-          <div className="grid grid-cols-2 gap-8 text-xs uppercase tracking-widest py-8" style={{ color: '#1A1A1A', borderTop: '1px solid #D6CFC0', borderBottom: '1px solid #D6CFC0' }}>
+          <div className="grid grid-cols-2 gap-8 text-xs uppercase tracking-widest py-8" style={{ color: 'var(--text)', borderTop: '1px solid #D6CFC0', borderBottom: '1px solid #D6CFC0' }}>
             <div className="space-y-4">
               {art.dimensions && (
                 <div>
@@ -123,7 +123,7 @@ const ArtworkPage: React.FC = () => {
           </div>
 
           {/* DESCRIPTION */}
-          <div className="prose prose-stone max-w-none text-[#1A1A1A] space-y-6">
+          <div className="prose prose-stone max-w-none text-[var(--text)] space-y-6">
             <p className="whitespace-pre-wrap leading-relaxed text-sm">
               {art.description}
             </p>
@@ -131,7 +131,7 @@ const ArtworkPage: React.FC = () => {
 
           {/* OBJECT DETAILS BLOCK */}
           <div className="bg-[#FDFBF7] p-8 space-y-6">
-            <h3 className="text-sm uppercase tracking-widest text-[#1A1A1A] mb-6">Object Record</h3>
+            <h3 className="text-sm uppercase tracking-widest text-[var(--text)] mb-6">Object Record</h3>
             <ul className="space-y-3">
               <li className="flex justify-between border-b border-[#E8E3DA] pb-2">
                 <span className="text-[#4A4A4A]">Category</span> <span>{art.category || art.categoryId}</span>

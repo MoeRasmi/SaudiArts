@@ -21,9 +21,9 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-24 relative z-10">
         <div className="md:col-span-1">
           <Link to="/" className="flex flex-col mb-8">
-            <span className="text-3xl font-serif tracking-widest uppercase" style={{ color: '#1A1A1A' }}>
-              ALQALÁ
-            </span>
+            <span className="text-3xl font-serif tracking-widest uppercase" style={{ color: 'var(--text)' }}>
+                ALQALÁ
+              </span>
             <span className="text-xs tracking-[0.5em] uppercase" style={{ color: 'var(--text-faint)' }}>
               Museum
             </span>
@@ -38,9 +38,9 @@ export const Footer: React.FC = () => {
             Museum
           </h4>
           <ul className="space-y-3 flex flex-col items-start rtl:items-end">
-            <li><Link to="/about" className="text-xs transition-colors uppercase tracking-widest hover:opacity-100" style={{ color: '#1A1A1A' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')} onMouseLeave={e => (e.currentTarget.style.color = '#1A1A1A')}>{t('nav.about')}</Link></li>
-            <li><Link to="/works" className="text-xs transition-colors uppercase tracking-widest" style={{ color: '#1A1A1A' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')} onMouseLeave={e => (e.currentTarget.style.color = '#1A1A1A')}>{t('nav.works')}</Link></li>
-            <li><Link to="/private" className="text-xs transition-colors uppercase tracking-widest" style={{ color: '#1A1A1A' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')} onMouseLeave={e => (e.currentTarget.style.color = '#1A1A1A')}>{t('nav.private')}</Link></li>
+            <li><Link to="/about" className="text-xs transition-colors uppercase tracking-widest hover:opacity-100" style={{ color: 'var(--text)' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')} onMouseLeave={e => (e.currentTarget.style.color = 'var(--text)')}>{t('nav.about')}</Link></li>
+            <li><Link to="/works" className="text-xs transition-colors uppercase tracking-widest" style={{ color: 'var(--text)' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')} onMouseLeave={e => (e.currentTarget.style.color = 'var(--text)')}>{t('nav.works')}</Link></li>
+            <li><Link to="/private" className="text-xs transition-colors uppercase tracking-widest" style={{ color: 'var(--text)' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')} onMouseLeave={e => (e.currentTarget.style.color = 'var(--text)')}>{t('nav.private')}</Link></li>
           </ul>
         </div>
 
@@ -49,9 +49,9 @@ export const Footer: React.FC = () => {
             Services
           </h4>
           <ul className="space-y-3 flex flex-col items-start rtl:items-end">
-            <li><Link to="/services" className="text-xs transition-colors uppercase tracking-widest" style={{ color: '#1A1A1A' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')} onMouseLeave={e => (e.currentTarget.style.color = '#1A1A1A')}>{t('nav.services')}</Link></li>
-            <li><Link to="/gifting" className="text-xs transition-colors uppercase tracking-widest" style={{ color: '#1A1A1A' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')} onMouseLeave={e => (e.currentTarget.style.color = '#1A1A1A')}>{t('nav.gifting')}</Link></li>
-            <li><Link to="/inquire" className="text-xs transition-colors uppercase tracking-widest" style={{ color: '#1A1A1A' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')} onMouseLeave={e => (e.currentTarget.style.color = '#1A1A1A')}>{t('nav.inquire')}</Link></li>
+            <li><Link to="/services" className="text-xs transition-colors uppercase tracking-widest" style={{ color: 'var(--text)' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')} onMouseLeave={e => (e.currentTarget.style.color = 'var(--text)')}>{t('nav.services')}</Link></li>
+            <li><Link to="/gifting" className="text-xs transition-colors uppercase tracking-widest" style={{ color: 'var(--text)' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')} onMouseLeave={e => (e.currentTarget.style.color = 'var(--text)')}>{t('nav.gifting')}</Link></li>
+            <li><Link to="/inquire" className="text-xs transition-colors uppercase tracking-widest" style={{ color: 'var(--text)' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')} onMouseLeave={e => (e.currentTarget.style.color = 'var(--text)')}>{t('nav.inquire')}</Link></li>
           </ul>
         </div>
 
@@ -60,9 +60,9 @@ export const Footer: React.FC = () => {
             Contact
           </h4>
           <ul className="space-y-3 flex flex-col items-start rtl:items-end">
-            <li className="text-xs tracking-widest uppercase" style={{ color: '#1A1A1A' }}>Riyadh, Saudi Arabia</li>
-            <li className="text-xs tracking-widest" style={{ color: '#1A1A1A' }}>inquire@alqala.museum</li>
-            <li className="text-xs tracking-widest" style={{ color: '#1A1A1A' }}>+966 11 123 4567</li>
+            <li className="text-xs tracking-widest uppercase" style={{ color: 'var(--text)' }}>Riyadh, Saudi Arabia</li>
+            <li className="text-xs tracking-widest" style={{ color: 'var(--text)' }}>inquire@alqala.museum</li>
+            <li className="text-xs tracking-widest" style={{ color: 'var(--text)' }}>+966 11 123 4567</li>
           </ul>
         </div>
       </div>
@@ -73,8 +73,8 @@ export const Footer: React.FC = () => {
       >
         <span>© {year} ALQALÁ MUSEUM. ALL RIGHTS RESERVED.</span>
         <div className="flex space-x-6 rtl:space-x-reverse">
-          <button className="transition-colors hover:opacity-100" style={{ color: '#1A1A1A' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')} onMouseLeave={e => (e.currentTarget.style.color = '#1A1A1A')}>Privacy Policy</button>
-          <button className="transition-colors" style={{ color: '#1A1A1A' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')} onMouseLeave={e => (e.currentTarget.style.color = '#1A1A1A')}>Terms of Service</button>
+          <button className="transition-colors hover:opacity-100" style={{ color: 'var(--text)' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')} onMouseLeave={e => (e.currentTarget.style.color = 'var(--text)')}>Privacy Policy</button>
+          <button className="transition-colors" style={{ color: 'var(--text)' }} onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')} onMouseLeave={e => (e.currentTarget.style.color = 'var(--text)')}>Terms of Service</button>
         </div>
       </div>
     </footer>

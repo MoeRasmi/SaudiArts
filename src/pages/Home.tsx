@@ -42,7 +42,7 @@ const Home: React.FC = () => {
       </div>
 
       {/* Header Logo — Centered at top, Black */}
-      <div className="absolute top-8 left-0 right-0 flex justify-center z-20">
+          <div className="absolute top-8 left-0 right-0 flex justify-center z-20">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -50,12 +50,12 @@ const Home: React.FC = () => {
           className="text-center"
         >
           <div className="flex items-center justify-center space-x-3 rtl:space-x-reverse">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ border: `1px solid #1A1A1A` }}>
-              <span className="text-lg font-serif" style={{ color: '#1A1A1A' }}>AQ</span>
+            <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ border: `1px solid var(--text)` }}>
+              <span className="text-lg font-serif" style={{ color: 'var(--text)' }}>AQ</span>
             </div>
             <div>
-              <span className="text-xl font-serif tracking-wider" style={{ color: '#1A1A1A' }}>ALQALÁ</span>
-              <span className="block text-[8px] tracking-[0.3em] uppercase" style={{ color: '#1A1A1A' }}>Museum</span>
+              <span className="text-xl font-serif tracking-wider" style={{ color: 'var(--text)' }}>ALQALÁ</span>
+              <span className="block text-[8px] tracking-[0.3em] uppercase" style={{ color: 'var(--text)' }}>Museum</span>
             </div>
           </div>
         </motion.div>
@@ -73,7 +73,7 @@ const Home: React.FC = () => {
             border: '1px solid var(--gold-line)',
           }}
         >
-          <h1 className="text-3xl md:text-4xl font-serif leading-tight mb-4" style={{ color: '#1A1A1A' }}>
+          <h1 className="text-3xl md:text-4xl font-serif leading-tight mb-4" style={{ color: 'var(--text)' }}>
             {heroTitle || t('hero.title')}
           </h1>
           <p className="text-sm md:text-base leading-relaxed" style={{ color: '#4A4A4A' }}>
@@ -82,7 +82,7 @@ const Home: React.FC = () => {
           <Link
             to="/works"
             className="inline-block mt-6 text-xs uppercase tracking-[0.2em] transition-colors pb-1"
-            style={{ color: '#1A1A1A', borderBottom: '2px solid #1A1A1A' }}
+            style={{ color: 'var(--text)', borderBottom: '2px solid var(--text)' }}
           >
             {t('hero.cta', 'Discover')}
           </Link>
@@ -101,7 +101,7 @@ const Home: React.FC = () => {
             border: '1px solid var(--gold-line)',
           }}
         >
-          <span className="text-[10px] uppercase tracking-[0.2em]" style={{ color: '#1A1A1A' }}>
+          <span className="text-[10px] uppercase tracking-[0.2em]" style={{ color: 'var(--text)' }}>
             {t('hero.microritm', 'Est. 1978')}
           </span>
         </motion.div>

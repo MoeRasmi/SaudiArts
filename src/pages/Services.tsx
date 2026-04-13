@@ -16,7 +16,7 @@ const Services: React.FC = () => {
         <span className="text-[10px] uppercase tracking-[0.4em] font-bold" style={{ color: 'var(--gold)' }}>
           {t('services.subtitle')}
         </span>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight italic" style={{ color: '#1A1A1A' }}>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight italic" style={{ color: 'var(--text)' }}>
           {t('services.title')}
         </h1>
         <div className="w-12 h-px mx-auto" style={{ backgroundColor: 'var(--gold)', opacity: 0.4 }} />
@@ -34,7 +34,7 @@ const Services: React.FC = () => {
             <h3 className="text-2xl font-serif italic" style={{ color: 'var(--gold)' }}>
               {t('services.curation.title')}
             </h3>
-            <p className="text-lg leading-relaxed font-sans" style={{ color: '#1A1A1A' }}>
+            <p className="text-lg leading-relaxed font-sans" style={{ color: 'var(--text)' }}>
               {t('services.curation.desc')}
             </p>
           </div>
@@ -43,7 +43,7 @@ const Services: React.FC = () => {
             <h3 className="text-2xl font-serif italic" style={{ color: 'var(--gold)' }}>
               {t('services.events.title')}
             </h3>
-            <p className="text-lg leading-relaxed font-sans" style={{ color: '#1A1A1A' }}>
+            <p className="text-lg leading-relaxed font-sans" style={{ color: 'var(--text)' }}>
               {t('services.events.desc')}
             </p>
           </div>

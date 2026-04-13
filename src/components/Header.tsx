@@ -46,7 +46,7 @@ export const Header: React.FC = () => {
         <Link to="/" className="flex flex-col items-center group">
           <span
             className="text-2xl lg:text-3xl font-serif tracking-widest uppercase transition-all duration-500 group-hover:scale-105"
-            style={{ color: '#1A1A1A' }}
+            style={{ color: 'var(--text)' }}
           >
             ALQALÁ
           </span>
@@ -59,32 +59,33 @@ export const Header: React.FC = () => {
         </Link>
 
         {/* Desktop Nav — 25% larger, black text */}
-        <nav className="hidden lg:flex items-center space-x-8 rtl:space-x-reverse">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              className={({ isActive }) => cn(
-                "text-sm uppercase tracking-widest font-sans transition-all duration-300",
-                isActive
-                  ? "border-b border-current"
-                  : "hover:opacity-70"
-              )}
-              style={({ isActive }) => ({
-                color: isActive ? 'var(--gold)' : '#1A1A1A',
-              })}
-            >
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
+          <nav className="hidden lg:flex items-center space-x-8 rtl:space-x-reverse">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                className={({ isActive }) => cn(
+                  "text-sm uppercase tracking-widest font-sans transition-all duration-300",
+                  isActive
+                    ? "border-b border-current"
+                    : "hover:opacity-70"
+                )}
+                style={({ isActive }) => ({
+                  color: isActive ? 'var(--gold)' : 'var(--text)',
+                  fontSize: '125%'
+                })}
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
 
         {/* Desktop — Language only */}
         <div className="hidden lg:flex items-center space-x-6 rtl:space-x-reverse">
           <button
             onClick={() => changeLang(lang === 'en' ? 'ar' : 'en')}
             className="flex items-center space-x-2 rtl:space-x-reverse transition-all duration-300 hover:opacity-70"
-            style={{ color: '#1A1A1A' }}
+            style={{ color: 'var(--text)' }}
           >
             <Languages size={16} />
             <span className="text-[10px] uppercase tracking-widest">
@@ -97,7 +98,7 @@ export const Header: React.FC = () => {
         <button
           className="lg:hidden"
           onClick={() => setIsOpen(!isOpen)}
-          style={{ color: '#1A1A1A' }}
+          style={{ color: 'var(--text)' }}
         >
           {isOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
@@ -117,9 +118,9 @@ export const Header: React.FC = () => {
               to={item.to}
               onClick={() => setIsOpen(false)}
               className="text-lg uppercase tracking-widest font-serif transition-colors duration-300"
-              style={{ color: '#1A1A1A' }}
+              style={{ color: 'var(--text)' }}
               onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')}
-              onMouseLeave={e => (e.currentTarget.style.color = '#1A1A1A')}
+              onMouseLeave={e => (e.currentTarget.style.color = 'var(--text)')}
             >
               {item.label}
             </Link>

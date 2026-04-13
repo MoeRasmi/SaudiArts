@@ -29,6 +29,7 @@ const Works: React.FC = () => {
     fetchData();
   }, []);
 
+  const newlyArrived = artworks.slice(0, 6);
   const featured = artworks.slice(0, 1);
   
   let filtered = filter === 'all' 
@@ -53,7 +54,7 @@ const Works: React.FC = () => {
       {/* HERO */}
       <section className="py-32 flex flex-col items-center justify-center text-center px-6">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="max-w-[600px] mx-auto space-y-6">
-          <h1 className="text-5xl md:text-6xl font-serif" style={{ color: '#1A1A1A' }}>Works of Art</h1>
+          <h1 className="text-5xl md:text-6xl font-serif" style={{ color: 'var(--text)' }}>Works of Art</h1>
           <p style={{ color: 'var(--gold)' }} className="leading-relaxed text-lg mx-auto">
             A curated selection of objects defined by craftsmanship, material integrity, and historical presence.
           </p>
@@ -62,7 +63,7 @@ const Works: React.FC = () => {
 
       {/* FEATURED OBJECT SECTION */}
       {featured.length > 0 && (
-        <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-32">
+        <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-12">
           {featured.map((item, idx) => (
             <motion.div 
               key={`feat-${idx}`}
@@ -71,27 +72,21 @@ const Works: React.FC = () => {
             >
               <div className="aspect-[4/5] bg-[var(--bg-stone)] overflow-hidden">
                 {item.images?.[0]?.asset?.url && (
-                  <img src={item.images[0].asset.url} alt={item.title} className="w-full h-full object-cover grayscale-[15%]" />
+                  <img src={item.images[0].asset.url} alt={item.title} className="w-full h-full object-cover" />
                 )}
               </div>
               <div className="space-y-8 max-w-lg">
                 <div className="space-y-2">
-                  <h2 className="text-4xl font-serif" style={{ color: '#1A1A1A' }}>{item.title}</h2>
+                  <h2 className="text-4xl font-serif" style={{ color: 'var(--text)' }}>{item.title}</h2>
                   <div className="text-[10px] uppercase tracking-widest text-[var(--gold)]">
                     {item.category || item.categoryId} • {item.period}
                   </div>
                 </div>
-                <p style={{ color: '#1A1A1A' }} className="leading-relaxed">
+                <p style={{ color: 'var(--text)' }} className="leading-relaxed">
                   {(item.description || '').split('. ')[0] + '.'}
                 </p>
-                {item.dimensions && (
-                  <div className="text-xs uppercase tracking-widest text-[#999999]">
-                    Dims: {item.dimensions.height} {item.dimensions.unit} H 
-                    {item.dimensions.width ? ` × ${item.dimensions.width} ${item.dimensions.unit} W` : ''}
-                  </div>
-                )}
                 <div className="pt-4">
-                  <Link to={`/artwork/${item.slug || item.id}`} className="inline-block border-b border-[#1A1A1A] pb-1 text-xs uppercase tracking-widest hover:text-[var(--gold)] hover:border-[var(--gold)] transition-colors" style={{ color: '#1A1A1A' }}>
+                  <Link to={`/artwork/${item.slug || item.id}`} className="inline-block mt-2 text-xs uppercase tracking-[0.2em] transition-colors pb-1 border-b" style={{ color: 'var(--text)', borderBottom: '2px solid var(--text)' }}>
                     View Object
                   </Link>
                 </div>
@@ -101,9 +96,31 @@ const Works: React.FC = () => {
         </section>
       )}
 
+      {/* NEWLY ARRIVED HORIZONTAL SCROLLER */}
+      {newlyArrived.length > 0 && (
+        <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-12">
+          <h3 className="text-xl font-serif mb-6" style={{ color: 'var(--text)' }}>Newly Arrived</h3>
+          <div className="flex space-x-6 overflow-x-auto pb-4">
+            {newlyArrived.map((item, idx) => (
+              <Link key={`new-${idx}`} to={`/artwork/${item.slug || item.id}`} className="min-w-[260px] block bg-[var(--bg-parchment)] border border-[var(--gold-line)] rounded-sm overflow-hidden">
+                <div className="aspect-[4/5] overflow-hidden bg-[var(--bg-parchment)]">
+                  {item.images?.[0]?.asset?.url && (
+                    <img src={item.images[0].asset.url} alt={item.title} className="w-full h-full object-cover" />
+                  )}
+                </div>
+                <div className="p-4">
+                  <div className="text-lg font-serif" style={{ color: 'var(--text)' }}>{item.title}</div>
+                  <div className="text-xs text-[var(--text-faint)] mt-1">{item.period}</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* CONTROL BAR */}
       <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-12">
-        <div className="flex flex-col md:flex-row justify-between items-center border-b border-[var(--gold-line)] pb-6 text-xs uppercase tracking-widest" style={{ color: '#1A1A1A' }}>
+        <div className="flex flex-col md:flex-row justify-between items-center border-b border-[var(--gold-line)] pb-6 text-xs uppercase tracking-widest" style={{ color: 'var(--text)' }}>
           <div className="flex space-x-8 mb-4 md:mb-0 overflow-x-auto w-full md:w-auto">
             <button onClick={() => setFilter('all')} className={`hover:text-[var(--gold)] transition-colors whitespace-nowrap ${filter === 'all' ? 'text-[var(--gold)]' : ''}`}>All</button>
             {categories.map(c => (
@@ -114,7 +131,7 @@ const Works: React.FC = () => {
           </div>
           <div className="flex space-x-6 items-center w-full md:w-auto justify-end">
             <span className="opacity-50">Sort</span>
-            <select value={sort} onChange={e => setSort(e.target.value)} className="bg-transparent outline-none cursor-pointer hover:text-[var(--gold)] hover:bg-transparent !p-0" style={{ color: '#1A1A1A' }}>
+            <select value={sort} onChange={e => setSort(e.target.value)} className="bg-transparent outline-none cursor-pointer hover:text-[var(--gold)] hover:bg-transparent !p-0" style={{ color: 'var(--text)' }}>
               <option value="latest">Latest Addition</option>
               <option value="alphabetical">A - Z</option>
             </select>
@@ -129,11 +146,33 @@ const Works: React.FC = () => {
         </p>
       </div>
 
-      {/* COLLECTION GRID */}
+      {/* CATEGORIES GRID (Folder style) */}
       <section className="max-w-7xl mx-auto px-6 lg:px-12 pb-32">
         {loading ? (
-          <div className="text-center py-32 text-xs uppercase tracking-widest" style={{ color: '#1A1A1A' }}>Loading Collection...</div>
+          <div className="text-center py-32 text-xs uppercase tracking-widest" style={{ color: 'var(--text)' }}>Loading Categories...</div>
         ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {categories.map((c: any, i: number) => (
+              <div key={c.slug || i} className="block bg-[var(--bg-parchment)] border border-[var(--gold-line)] rounded-sm overflow-hidden">
+                <Link to={`/works`} onClick={() => setFilter(c.slug)} className="block">
+                  <div className="aspect-[4/3] bg-[var(--bg-parchment)] overflow-hidden">
+                    {c.image && <img src={c.image} alt={c.title} className="w-full h-full object-cover" />}
+                  </div>
+                  <div className="p-6">
+                    <div className="text-xl font-serif" style={{ color: 'var(--text)' }}>{c.title}</div>
+                    <div className="text-sm mt-2" style={{ color: 'var(--text-faint)', minHeight: '1.4em' }}>{(c.description || '').split('\n')[0]}</div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+
+      {/* If filter selected, show filtered collection grid */}
+      {filter !== 'all' && (
+        <section className="max-w-7xl mx-auto px-6 lg:px-12 pb-32">
+          <h3 className="text-xl font-serif mb-6" style={{ color: 'var(--text)' }}>Collection</h3>
           <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
             <AnimatePresence>
               {filtered.map((item, idx) => (
@@ -145,7 +184,7 @@ const Works: React.FC = () => {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Link to={`/artwork/${item.slug || item.id}`} className="group block relative aspect-[4/5] bg-[#FDFBF7] overflow-hidden">
+                  <Link to={`/artwork/${item.slug || item.id}`} className="group block relative aspect-[4/5] bg-[var(--bg-parchment)] overflow-hidden border border-[var(--gold-line)]">
                     {item.images?.[0]?.asset?.url && (
                       <img 
                         src={item.images[0].asset.url} 
@@ -153,22 +192,10 @@ const Works: React.FC = () => {
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     )}
-                    
-                    {/* Dark Overlay on Hover */}
-                    <div className="absolute inset-0 bg-[#1A1A1A]/0 group-hover:bg-[#1A1A1A]/60 transition-colors duration-500 flex flex-col justify-end p-8 pb-10 opacity-0 group-hover:opacity-100">
-                      <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 space-y-3">
-                        <h3 className="text-[#F8F6F2] text-2xl font-serif leading-tight">{item.title}</h3>
-                        <div className="text-[var(--gold)] text-[10px] uppercase tracking-widest border-b border-[var(--gold)]/30 pb-3">
-                          {item.category || item.categoryId} • {item.period}
-                        </div>
-                        <div className="text-[#E0D9CC] text-xs leading-relaxed pt-2">
-                          {item.dimensions?.height 
-                            ? `${item.dimensions.height}${item.dimensions.unit} H` 
-                            : getDims(item.description)}
-                        </div>
-                        <div className="inline-block mt-4 text-[9px] uppercase tracking-widest px-2 py-1 border border-[var(--gold)]/30 text-[var(--gold)]">
-                          Private Collection
-                        </div>
+                    <div className="absolute inset-0 bg-transparent flex flex-col justify-end p-6">
+                      <div className="bg-white/60 backdrop-blur-sm p-4 rounded-sm">
+                        <h3 className="text-lg font-serif" style={{ color: 'var(--text)' }}>{item.title}</h3>
+                        <div className="text-xs" style={{ color: 'var(--text-faint)' }}>{item.period}</div>
                       </div>
                     </div>
                   </Link>
@@ -176,8 +203,8 @@ const Works: React.FC = () => {
               ))}
             </AnimatePresence>
           </motion.div>
-        )}
-      </section>
+        </section>
+      )}
 
     </div>
   );

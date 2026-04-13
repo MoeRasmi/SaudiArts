@@ -1,20 +1,18 @@
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
-import { artwork } from './src/sanity/schemas/artwork'
-import { category } from './src/sanity/schemas/category'
-import { siteSettings } from './src/sanity/schemas/siteSettings'
+import { schemas } from './src/sanity/schemas'
 
 import { cloudinarySchemaPlugin } from 'sanity-plugin-cloudinary'
 
 export default defineConfig({
   name: 'default',
   title: 'Alqala Museum Admin',
-  projectId: import.meta.env?.VITE_SANITY_PROJECT_ID || '56rsac5v',
+  projectId: import.meta.env?.VITE_SANITY_PROJECT_ID || 'pg9ct8q7cm8yrp2jzujnqrik',
   dataset: import.meta.env?.VITE_SANITY_DATASET || 'production',
   basePath: '/admin',
   plugins: [structureTool(), visionTool(), cloudinarySchemaPlugin()],
   schema: {
-    types: [artwork, category, siteSettings],
+    types: schemas,
   },
 })
