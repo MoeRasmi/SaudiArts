@@ -53,4 +53,16 @@ export const category = defineType({
       validation: (Rule) => Rule.required(),
     }),
   ],
+  // Provide explicit orderings to avoid Studio defaulting to a non-existent `title` field
+  orderings: [
+    { title: 'Order weight (asc)', name: 'orderWeightAsc', by: [{ field: 'orderWeight', direction: 'asc' }] },
+    { title: 'Title (EN, asc)', name: 'titleEnAsc', by: [{ field: 'titleEn', direction: 'asc' }] },
+  ],
+  preview: {
+    select: {
+      title: 'titleEn',
+      subtitle: 'descriptionEn',
+      media: 'categoryImage'
+    }
+  },
 })
