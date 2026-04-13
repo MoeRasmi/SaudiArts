@@ -23,7 +23,7 @@ const About: React.FC = () => {
             <span className="text-[10px] uppercase tracking-[0.4em] font-bold" style={{ color: 'var(--gold)' }}>
               Heritage &amp; Vision
             </span>
-            <h2 className="text-4xl md:text-5xl font-serif leading-tight italic" style={{ color: 'var(--text)' }}>
+            <h2 className="text-4xl md:text-5xl font-serif leading-tight italic" style={{ color: '#1A1A1A' }}>
               {t('about.title')}
             </h2>
           </div>
@@ -32,12 +32,12 @@ const About: React.FC = () => {
 
           <p
             className="text-lg leading-relaxed font-sans first-letter:text-4xl first-letter:font-serif first-letter:mr-3 first-letter:float-left first-letter:mt-1"
-            style={{ color: 'var(--text-muted)' }}
+            style={{ color: '#1A1A1A' }}
           >
             {t('about.content')}
           </p>
 
-          <p className="text-sm leading-loose" style={{ color: 'var(--text-muted)' }}>
+          <p className="text-sm leading-loose" style={{ color: '#1A1A1A' }}>
             At Alqalá, we believe that art is the ultimate bridge between generations. Our curated collections represent centuries of human achievement, from the delicate patterns of 14th-century ceramics to the formidable strength of royal armour. Each acquisition is a promise of preservation, ensuring that the legacy of heritage remains vibrant and accessible to those who appreciate the finer details of history.
           </p>
 
@@ -58,7 +58,7 @@ const About: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 1.5, ease: "easeOut" }}
           className="order-1 lg:order-2 aspect-[4/5] overflow-hidden rounded-sm luxury-glow"
-          style={{ boxShadow: '0 4px 40px rgba(184,150,78,0.12)' }}
+          style={{ boxShadow: '0 4px 40px rgba(212, 175, 55, 0.12)' }}
         >
           <img
             src={aboutImage}

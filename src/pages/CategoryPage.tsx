@@ -43,11 +43,11 @@ const CategoryPage: React.FC = () => {
         <Link to="/works" className="text-[10px] uppercase tracking-widest hover:underline" style={{ color: 'var(--gold)' }}>
           ← {t('nav.works')}
         </Link>
-        <h2 className="text-5xl md:text-6xl font-serif tracking-tight italic" style={{ color: 'var(--text)' }}>
+        <h2 className="text-5xl md:text-6xl font-serif tracking-tight italic" style={{ color: '#1A1A1A' }}>
           {t(`works.categories.${categoryId}`)}
         </h2>
         <div className="w-16 h-px" style={{ backgroundColor: 'var(--gold)', opacity: 0.4 }} />
-        <p className="max-w-2xl text-sm leading-relaxed tracking-wide" style={{ color: 'var(--text-muted)' }}>
+        <p className="max-w-2xl text-sm leading-relaxed tracking-wide" style={{ color: '#1A1A1A' }}>
           A collection of rare {t(`works.categories.${categoryId}`).toLowerCase()}, showcasing the pinnacle of historical craftsmanship and artistic expression from various eras.
         </p>
       </div>
@@ -78,9 +78,9 @@ const CategoryPage: React.FC = () => {
                 <div className="space-y-2">
                   <h3
                     className="text-xl font-serif transition-colors duration-500"
-                    style={{ color: 'var(--text)' }}
+                    style={{ color: '#1A1A1A' }}
                     onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')}
-                    onMouseLeave={e => (e.currentTarget.style.color = 'var(--text)')}
+                    onMouseLeave={e => (e.currentTarget.style.color = '#1A1A1A')}
                   >
                     {art.title}
                   </h3>

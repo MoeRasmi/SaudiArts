@@ -37,11 +37,11 @@ const CorporateGifting: React.FC = () => {
         <span className="text-[10px] uppercase tracking-[0.4em] font-bold" style={{ color: 'var(--gold)' }}>
           {t('gifting.subtitle')}
         </span>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight italic" style={{ color: 'var(--text)' }}>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight italic" style={{ color: '#1A1A1A' }}>
           {t('gifting.title')}
         </h1>
         <div className="w-12 h-px mx-auto" style={{ backgroundColor: 'var(--gold)', opacity: 0.4 }} />
-        <p className="text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: 'var(--text-muted)' }}>
+        <p className="text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: '#1A1A1A' }}>
           {t('gifting.desc')}
         </p>
       </motion.div>

@@ -37,15 +37,15 @@ const ArtworkPage: React.FC = () => {
   }
 
   if (!art) {
-    return <div className="min-h-screen bg-[var(--bg)] flex items-center justify-center text-[var(--text-muted)]">Artwork not found.</div>;
+    return <div className="min-h-screen bg-[var(--bg)] flex items-center justify-center" style={{ color: '#1A1A1A' }}>Artwork not found.</div>;
   }
 
   const shortIntro = art.description ? art.description.split('. ')[0] + '.' : '';
 
   return (
-    <div className="bg-[var(--bg)] min-h-screen text-[var(--text)] font-sans pb-32">
+    <div className="bg-[var(--bg)] min-h-screen" style={{ color: '#1A1A1A' }} className="font-sans pb-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-12 pb-8">
-        <Link to="/works" className="text-[10px] uppercase tracking-widest text-[var(--gold)] hover:text-[var(--text)] hover:underline transition-colors">
+        <Link to="/works" className="text-[10px] uppercase tracking-widest text-[var(--gold)] hover:text-[#1A1A1A] hover:underline transition-colors">
           ← Back to Collection
         </Link>
       </div>
@@ -55,7 +55,7 @@ const ArtworkPage: React.FC = () => {
         
         {/* LEFT: GALLERY */}
         <div className="space-y-6 lg:sticky lg:top-32">
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="aspect-[4/5] bg-[#EDE8DC] overflow-hidden rounded-sm">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="aspect-[4/5] bg-[#FDFBF7] overflow-hidden rounded-sm">
             {art.images && art.images[activeImageIdx] && (
               <img 
                 src={art.images[activeImageIdx].url} 
@@ -70,7 +70,7 @@ const ArtworkPage: React.FC = () => {
                 <button 
                   key={idx} 
                   onClick={() => setActiveImageIdx(idx)}
-                  className={`aspect-square overflow-hidden bg-[#EDE8DC] border ${activeImageIdx === idx ? 'border-[#8C6A3B]' : 'border-transparent opacity-60 hover:opacity-100'} transition-all`}
+                  className={`aspect-square overflow-hidden bg-[#FDFBF7] border ${activeImageIdx === idx ? 'border-[#1A1A1A]' : 'border-transparent opacity-60 hover:opacity-100'} transition-all`}
                 >
                   <img src={img.url} alt={`Thumb ${idx}`} className="w-full h-full object-cover" />
                 </button>
@@ -89,17 +89,17 @@ const ArtworkPage: React.FC = () => {
             {art.price && (
               <div className="text-sm font-serif">Price: ${art.price.toLocaleString()}</div>
             )}
-            <p className="text-[var(--text-muted)] text-lg leading-relaxed pt-2">
+            <p className="text-lg leading-relaxed pt-2" style={{ color: '#1A1A1A' }}>
               {shortIntro}
             </p>
           </div>
 
           {/* ESSENTIAL DETAILS */}
-          <div className="grid grid-cols-2 gap-8 text-xs uppercase tracking-widest text-[#1C1A17] border-y border-[#D6CFC0] py-8">
+          <div className="grid grid-cols-2 gap-8 text-xs uppercase tracking-widest py-8" style={{ color: '#1A1A1A', borderTop: '1px solid #D6CFC0', borderBottom: '1px solid #D6CFC0' }}>
             <div className="space-y-4">
               {art.dimensions && (
                 <div>
-                  <span className="text-[#9E9790] block mb-1">Dimensions</span>
+                  <span className="text-[#999999] block mb-1">Dimensions</span>
                   {art.dimensions.height}{art.dimensions.unit} H 
                   {art.dimensions.width ? ` × ${art.dimensions.width}${art.dimensions.unit} W` : ''}
                   {art.dimensions.depth ? ` × ${art.dimensions.depth}${art.dimensions.unit} D` : ''}
@@ -107,7 +107,7 @@ const ArtworkPage: React.FC = () => {
               )}
               {art.material && (
                 <div>
-                  <span className="text-[#9E9790] block mb-1">Material</span>
+                  <span className="text-[#999999] block mb-1">Material</span>
                   {art.material}
                 </div>
               )}
@@ -115,7 +115,7 @@ const ArtworkPage: React.FC = () => {
             <div className="space-y-4">
               {art.origin && (
                 <div>
-                  <span className="text-[#9E9790] block mb-1">Origin</span>
+                  <span className="text-[#999999] block mb-1">Origin</span>
                   {art.origin}
                 </div>
               )}
@@ -123,24 +123,24 @@ const ArtworkPage: React.FC = () => {
           </div>
 
           {/* DESCRIPTION */}
-          <div className="prose prose-stone max-w-none text-[#1C1A17] space-y-6">
+          <div className="prose prose-stone max-w-none text-[#1A1A1A] space-y-6">
             <p className="whitespace-pre-wrap leading-relaxed text-sm">
               {art.description}
             </p>
           </div>
 
           {/* OBJECT DETAILS BLOCK */}
-          <div className="bg-[#EDE8DC] p-8 space-y-6">
-            <h3 className="text-sm uppercase tracking-widest text-[#8C6A3B] mb-6">Object Record</h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex justify-between border-b border-[#D6CFC0] pb-2">
-                <span className="text-[#6B6560]">Category</span> <span>{art.category || art.categoryId}</span>
+          <div className="bg-[#FDFBF7] p-8 space-y-6">
+            <h3 className="text-sm uppercase tracking-widest text-[#1A1A1A] mb-6">Object Record</h3>
+            <ul className="space-y-3">
+              <li className="flex justify-between border-b border-[#E8E3DA] pb-2">
+                <span className="text-[#4A4A4A]">Category</span> <span>{art.category || art.categoryId}</span>
               </li>
-              <li className="flex justify-between border-b border-[#D6CFC0] pb-2">
-                <span className="text-[#6B6560]">Period</span> <span>{art.period}</span>
+              <li className="flex justify-between border-b border-[#E8E3DA] pb-2">
+                <span className="text-[#4A4A4A]">Period</span> <span>{art.period}</span>
               </li>
-              <li className="flex justify-between border-b border-[#D6CFC0] pb-2">
-                <span className="text-[#6B6560]">Origin</span> <span>{art.origin}</span>
+              <li className="flex justify-between border-b border-[#E8E3DA] pb-2">
+                <span className="text-[#4A4A4A]">Origin</span> <span>{art.origin}</span>
               </li>
               {art.id && (
                 <li className="flex justify-between border-b border-[#D6CFC0] pb-2">

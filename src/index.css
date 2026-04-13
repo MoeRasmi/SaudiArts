@@ -6,19 +6,19 @@
    ═══════════════════════════════════════════ */
 
 :root {
-  --bg:           #0A0A0A;   /* Deep charcoal/black */
-  --bg-parchment: #121212;   /* Slightly lighter dark */
-  --bg-stone:     #1A1A1A;   /* For section backgrounds */
-  --text:         #FAF9F6;   /* Ivory white font */
-  --text-muted:   #B0B0B0;   /* Muted gray */
-  --text-faint:   #666666;   /* Faint secondary text */
-  --gold:         #C5A059;   /* Signature gold */
-  --gold-light:   #D4B06A;   /* Lighter gold hover */
-  --gold-line:    rgba(197, 160, 89, 0.25); /* Delicate gold lines */
-  --gold-glow:    rgba(197, 160, 89, 0.05); /* Soft gold glow */
-  --header-bg:    rgba(10, 10, 10, 0.95);  /* Dark header */
-  --border:       rgba(197, 160, 89, 0.2);   /* Gold borders */
-  --border-stone: #2A2A2A;                   /* Dark stone border */
+  --bg:           #FAF8F5;   /* Soft cream/ivory */
+  --bg-parchment: #FDFBF7;   /* Slightly warmer ivory */
+  --bg-stone:     #F5F1E9;   /* Warm stone background */
+  --text:         #1A1A1A;   /* Deep pure black */
+  --text-muted:   #4A4A4A;   /* Muted charcoal */
+  --text-faint:   #999999;   /* Faint secondary text */
+  --gold:         #D4AF37;   /* Refined tarnished gold */
+  --gold-light:   #E8D4A4;   /* Lighter gold for accents */
+  --gold-line:    rgba(212, 175, 55, 0.15); /* Delicate gold lines */
+  --gold-glow:    rgba(212, 175, 55, 0.08); /* Soft gold glow */
+  --header-bg:    rgba(250, 248, 245, 0.98);  /* Light cream header */
+  --border:       rgba(212, 175, 55, 0.15);   /* Subtle gold borders */
+  --border-stone: #E8E3DA;                   /* Light stone border */
 }
 
 @layer base {
@@ -48,7 +48,7 @@
 
   /* Selection color */
   ::selection {
-    background-color: rgba(184, 150, 78, 0.18);
+    background-color: rgba(212, 175, 55, 0.2);
     color: var(--text);
   }
 }
@@ -58,11 +58,12 @@
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-parchment);
+  background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--gold);
   border-radius: 2px;
+  opacity: 0.5;
 }
 
 /* ─── Luxury Glow (light mode version) ─── */
@@ -70,7 +71,7 @@
   transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .luxury-glow:hover {
-  box-shadow: 0 8px 40px rgba(184, 150, 78, 0.18), 0 2px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 40px rgba(212, 175, 55, 0.15), 0 2px 12px rgba(0,0,0,0.08);
 }
 
 /* ─── Subtle paper grain ─── */
@@ -113,9 +114,9 @@
 .text-ivory\/60       { color: rgba(26,26,26,0.60) !important; }
 .text-ivory\/70       { color: rgba(26,26,26,0.70) !important; }
 .text-ivory\/80       { color: rgba(26,26,26,0.80) !important; }
-.border-gold\/10      { border-color: rgba(197,160,89,0.10) !important; }
-.border-gold\/20      { border-color: rgba(197,160,89,0.22) !important; }
-.border-gold\/30      { border-color: rgba(197,160,89,0.32) !important; }
+.border-gold\/10      { border-color: rgba(212,175,55,0.10) !important; }
+.border-gold\/20      { border-color: rgba(212,175,55,0.22) !important; }
+.border-gold\/30      { border-color: rgba(212,175,55,0.32) !important; }
 
 /* ─── Black overlays ─── */
 .bg-black\/30 { background-color: rgba(0,0,0,0.30) !important; }

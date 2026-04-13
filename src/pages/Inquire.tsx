@@ -43,11 +43,11 @@ const Inquire: React.FC = () => {
           className="space-y-16"
         >
           <div className="space-y-6">
-            <h1 className="text-5xl md:text-6xl font-serif tracking-tight italic" style={{ color: 'var(--text)' }}>
+            <h1 className="text-5xl md:text-6xl font-serif tracking-tight italic" style={{ color: '#1A1A1A' }}>
               {t('inquire.title')}
             </h1>
             <div className="w-16 h-px" style={{ backgroundColor: 'var(--gold)', opacity: 0.45 }} />
-            <p className="text-lg leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+            <p className="text-lg leading-relaxed" style={{ color: '#1A1A1A' }}>
               {t('inquire.subtitle')}
             </p>
           </div>

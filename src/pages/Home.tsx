@@ -41,7 +41,7 @@ const Home: React.FC = () => {
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(250,249,246,0.15) 0%, rgba(250,249,246,0.35) 60%, rgba(250,249,246,0.65) 100%)' }} />
       </div>
 
-      {/* Header Logo — Centered at top */}
+      {/* Header Logo — Centered at top, Black */}
       <div className="absolute top-8 left-0 right-0 flex justify-center z-20">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -50,12 +50,12 @@ const Home: React.FC = () => {
           className="text-center"
         >
           <div className="flex items-center justify-center space-x-3 rtl:space-x-reverse">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ border: `1px solid var(--gold)` }}>
-              <span className="text-lg font-serif" style={{ color: 'var(--gold)' }}>AQ</span>
+            <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ border: `1px solid #1A1A1A` }}>
+              <span className="text-lg font-serif" style={{ color: '#1A1A1A' }}>AQ</span>
             </div>
             <div>
-              <span className="text-xl font-serif tracking-wider" style={{ color: 'var(--gold)' }}>ALQALÁ</span>
-              <span className="block text-[8px] tracking-[0.3em] uppercase" style={{ color: 'var(--gold)' }}>Museum</span>
+              <span className="text-xl font-serif tracking-wider" style={{ color: '#1A1A1A' }}>ALQALÁ</span>
+              <span className="block text-[8px] tracking-[0.3em] uppercase" style={{ color: '#1A1A1A' }}>Museum</span>
             </div>
           </div>
         </motion.div>
@@ -69,20 +69,20 @@ const Home: React.FC = () => {
           transition={{ delay: 1, duration: 1 }}
           className="backdrop-blur-md p-8 md:p-10 luxury-glow shadow-2xl"
           style={{
-            backgroundColor: 'rgba(255,255,255,0.85)',
+            backgroundColor: 'rgba(255,255,255,0.92)',
             border: '1px solid var(--gold-line)',
           }}
         >
-          <h1 className="text-3xl md:text-4xl font-serif leading-tight mb-4" style={{ color: 'var(--text)' }}>
+          <h1 className="text-3xl md:text-4xl font-serif leading-tight mb-4" style={{ color: '#1A1A1A' }}>
             {heroTitle || t('hero.title')}
           </h1>
-          <p className="text-sm md:text-base leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+          <p className="text-sm md:text-base leading-relaxed" style={{ color: '#4A4A4A' }}>
             {t('hero.subtitle', 'Where heritage meets contemporary artistry')}
           </p>
           <Link
             to="/works"
             className="inline-block mt-6 text-xs uppercase tracking-[0.2em] transition-colors pb-1"
-            style={{ color: '#C5A059', borderBottom: '1px solid #C5A059' }}
+            style={{ color: '#1A1A1A', borderBottom: '2px solid #1A1A1A' }}
           >
             {t('hero.cta', 'Discover')}
           </Link>
@@ -97,11 +97,11 @@ const Home: React.FC = () => {
           transition={{ delay: 1.5, duration: 1 }}
           className="backdrop-blur-md px-6 py-3 shadow-xl"
           style={{
-            backgroundColor: 'rgba(255,255,255,0.85)',
+            backgroundColor: 'rgba(255,255,255,0.92)',
             border: '1px solid var(--gold-line)',
           }}
         >
-          <span className="text-[10px] uppercase tracking-[0.2em]" style={{ color: '#C5A059' }}>
+          <span className="text-[10px] uppercase tracking-[0.2em]" style={{ color: '#1A1A1A' }}>
             {t('hero.microritm', 'Est. 1978')}
           </span>
         </motion.div>
@@ -115,7 +115,7 @@ const Home: React.FC = () => {
           transition={{ delay: 2, duration: 1 }}
           className="flex flex-col items-center space-y-2"
         >
-          <div className="w-px h-8" style={{ background: 'linear-gradient(to bottom, #C5A059, transparent)' }} />
+          <div className="w-px h-8" style={{ background: 'linear-gradient(to bottom, var(--gold), transparent)' }} />
         </motion.div>
       </div>
     </div>

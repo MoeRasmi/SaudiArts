@@ -42,11 +42,11 @@ export const Header: React.FC = () => {
       } : undefined}
     >
       <div className="max-w-7xl w-full mx-auto flex justify-between items-center">
-        {/* Logo */}
+        {/* Logo — Black */}
         <Link to="/" className="flex flex-col items-center group">
           <span
             className="text-2xl lg:text-3xl font-serif tracking-widest uppercase transition-all duration-500 group-hover:scale-105"
-            style={{ color: 'var(--gold)' }}
+            style={{ color: '#1A1A1A' }}
           >
             ALQALÁ
           </span>
@@ -58,20 +58,20 @@ export const Header: React.FC = () => {
           </span>
         </Link>
 
-        {/* Desktop Nav */}
+        {/* Desktop Nav — 25% larger, black text */}
         <nav className="hidden lg:flex items-center space-x-8 rtl:space-x-reverse">
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) => cn(
-                "text-xs uppercase tracking-widest font-sans transition-all duration-300",
+                "text-sm uppercase tracking-widest font-sans transition-all duration-300",
                 isActive
                   ? "border-b border-current"
                   : "hover:opacity-70"
               )}
               style={({ isActive }) => ({
-                color: isActive ? 'var(--gold)' : 'var(--text-muted)',
+                color: isActive ? 'var(--gold)' : '#1A1A1A',
               })}
             >
               {item.label}
@@ -84,7 +84,7 @@ export const Header: React.FC = () => {
           <button
             onClick={() => changeLang(lang === 'en' ? 'ar' : 'en')}
             className="flex items-center space-x-2 rtl:space-x-reverse transition-all duration-300 hover:opacity-70"
-            style={{ color: 'var(--text-muted)' }}
+            style={{ color: '#1A1A1A' }}
           >
             <Languages size={16} />
             <span className="text-[10px] uppercase tracking-widest">
@@ -97,13 +97,13 @@ export const Header: React.FC = () => {
         <button
           className="lg:hidden"
           onClick={() => setIsOpen(!isOpen)}
-          style={{ color: 'var(--gold)' }}
+          style={{ color: '#1A1A1A' }}
         >
           {isOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </div>
 
-      {/* Mobile Nav — Light Ivory */}
+      {/* Mobile Nav */}
       <div className={cn(
         "fixed inset-0 z-40 lg:hidden flex flex-col items-center justify-center transition-all duration-700",
         isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
@@ -117,16 +117,16 @@ export const Header: React.FC = () => {
               to={item.to}
               onClick={() => setIsOpen(false)}
               className="text-lg uppercase tracking-widest font-serif transition-colors duration-300"
-              style={{ color: 'var(--text)' }}
+              style={{ color: '#1A1A1A' }}
               onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold)')}
-              onMouseLeave={e => (e.currentTarget.style.color = 'var(--text)')}
+              onMouseLeave={e => (e.currentTarget.style.color = '#1A1A1A')}
             >
               {item.label}
             </Link>
           ))}
           <div
             className="flex space-x-8 rtl:space-x-reverse pt-8 w-full justify-center"
-            style={{ borderTop: '1px solid rgba(184,150,78,0.2)' }}
+            style={{ borderTop: '1px solid rgba(212, 175, 55, 0.15)' }}
           >
             <button
               onClick={() => changeLang(lang === 'en' ? 'ar' : 'en')}

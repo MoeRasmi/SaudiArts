@@ -4,36 +4,36 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Luxury light theme (redefined)
+        // Light luxury theme
         charcoal: {
-          DEFAULT: '#FAF9F6', // Actually ivory now for common bg usage
+          DEFAULT: '#FAF8F5', // Soft cream/ivory main bg
           lighter: '#FDFBF7',
         },
-        // Typography
+        // Typography - deep black
         ivory: {
-          DEFAULT: '#1A1A1A', // Actually charcoal now for common text usage
+          DEFAULT: '#1A1A1A', // Deep black for text
           darker: '#000000',
         },
-        // Luxury gold
+        // Refined gold - minimal accent
         gold: {
-          DEFAULT: '#C5A059',
-          muted: '#8B6F35',
-          glow: 'rgba(197, 160, 89, 0.2)',
+          DEFAULT: '#D4AF37',
+          muted: '#A0826D',
+          glow: 'rgba(212, 175, 55, 0.15)',
         },
-        // Borders
+        // Light borders
         stone: {
           DEFAULT: '#E8E3DA',
-          dark: '#F5F2ED',
+          dark: '#F5F1E9',
         },
-        // Card backgrounds
+        // Light backgrounds
         parchment: {
           DEFAULT: '#FDFBF7',
-          dark: '#F5F2ED',
+          dark: '#F5F1E9',
         },
-        // Text hierarchy
+        // Text hierarchy - now on light backgrounds
         ink: {
           DEFAULT: '#1A1A1A',
-          muted: '#666666',
+          muted: '#4A4A4A',
           faint: '#999999',
         },
         heritage: {
