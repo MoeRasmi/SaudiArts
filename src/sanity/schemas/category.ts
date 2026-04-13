@@ -6,6 +6,12 @@ export const category = defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'title',
+      title: 'Legacy Title',
+      type: 'string',
+      hidden: true,
+    }),
+    defineField({
       name: 'titleEn',
       title: 'Title (EN)',
       type: 'string',
